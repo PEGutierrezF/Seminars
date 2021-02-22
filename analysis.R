@@ -27,9 +27,9 @@ chla. <- read.csv("data/chla.csv")
 head(chla.)
 
 chla <- ggplot(chla., aes(x=event, y=chla, color=season, shape=season, na.rm = TRUE))+
-  geom_line(na.rm = TRUE)+
-  geom_point(na.rm = TRUE) +
-  xlab('Sampling event')+ ylab("Mean litter input rate ("*g~m^-2~d^-1*")") +
+  geom_line(size=1, na.rm = TRUE)+
+  geom_point(aes(shape = factor(pool), color =  factor(pool)), na.rm = TRUE) +
+  xlab('Sampling event')+ ylab("Chlorophyll-a ("*"\u03BC"~g~m^-2*")") +
 
   theme(axis.title.x = element_text(size = 14, angle = 0)) + # axis x
   theme(axis.title.y = element_text(size = 14, angle = 90)) + # axis y
