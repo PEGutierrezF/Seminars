@@ -26,10 +26,14 @@ leaf + ggsave("Leaf litter.jpeg",  width = 12, height = 10, units = "cm")
 chla. <- read.csv("data/chla.csv")
 head(chla.)
 
-chla <- ggplot(chla., aes(x=event, y=chla, color=season, shape=season, na.rm = TRUE))+
+chla <- ggplot(chla., aes(x=event, y=chla, color=season, na.rm = TRUE))+
   geom_line(size=1, na.rm = TRUE)+
-  geom_point(aes(shape = factor(pool), color =  factor(pool)), na.rm = TRUE) +
-  xlab('Sampling event')+ ylab("Chlorophyll-a ("*"\u03BC"~g~m^-2*")") +
+  geom_point(aes(shape =  factor(pool)),size=2, na.rm = TRUE) +
+  scale_shape_manual(values = c(1,2,3,4,5,6,7,8,9,10,11,12)) +
+  
+  labs(y="Chlorophyll-a ("*"\u03BC"~g~m^-2*")", x = "Sampling event", 
+       color = "Season", shape="Pool") +
+  
 
   theme(axis.title.x = element_text(size = 14, angle = 0)) + # axis x
   theme(axis.title.y = element_text(size = 14, angle = 90)) + # axis y
@@ -39,4 +43,4 @@ chla <- ggplot(chla., aes(x=event, y=chla, color=season, shape=season, na.rm = T
   theme_classic() 
 
   chla
-leaf + ggsave("Leaf litter.jpeg",  width = 12, height = 10, units = "cm")                     
+  chla + ggsave("Chla.jpeg",  width = 12, height = 10, units = "cm")                     
