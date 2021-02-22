@@ -20,3 +20,23 @@ leaf <- ggplot(leaflitter,aes(x=Week,y=Mean)) +
 leaf
 leaf + ggsave("Leaf litter.jpeg",  width = 12, height = 10, units = "cm")                     
                      
+
+
+
+chla. <- read.csv("data/chla.csv")
+head(chla.)
+
+chla <- ggplot(chla., aes(x=event, y=chla, color=season, shape=season, na.rm = TRUE))+
+  geom_line(na.rm = TRUE)+
+  geom_point(na.rm = TRUE) +
+  xlab('Sampling event')+ ylab("Mean litter input rate ("*g~m^-2~d^-1*")") +
+
+  theme(axis.title.x = element_text(size = 14, angle = 0)) + # axis x
+  theme(axis.title.y = element_text(size = 14, angle = 90)) + # axis y
+  theme(axis.text.x=element_text(angle=0, size=12, vjust=0.5, color="black")) + #subaxis x
+  theme(axis.text.y=element_text(angle=0, size=12, vjust=0.5, color="black")) + #subaxis y
+  
+  theme_classic() 
+
+  chla
+leaf + ggsave("Leaf litter.jpeg",  width = 12, height = 10, units = "cm")                     
