@@ -21,4 +21,4 @@ sh2
 
 ggplot(sh2, aes(x=observation , y=mean)) + 
   geom_line() +
-  geom_point()
+  geom_point() 
