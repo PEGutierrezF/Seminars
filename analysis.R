@@ -4,8 +4,13 @@ library(ggplot2)
 leaflitter <- read.csv("data/leaflitter.csv")
 head(leaflitter)
 
+summary(leaflitter)
+
+leaflitter$Week<-as.POSIXct(leaflitter$Week,"%Y-%m-%d",tz = "UTC")
+
+
 leaf <- ggplot(leaflitter,aes(x=Week,y=Mean)) +
-  xlab('Sampling event (weeks)')+ ylab("Mean litter input rate ("*g~m^-2~d^-1*")") +
+  xlab('Sampling event (2010-2020)')+ ylab("Mean litter input rate ("*g~m^-2~d^-1*")") +
   geom_point(colour = "#1d5c06", size = 1) +
   geom_errorbar(aes(ymax=Mean+SD, ymin=Mean-SD),na.rm=TRUE, position="dodge",
                 colour = "#a7db3d") +
