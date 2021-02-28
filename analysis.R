@@ -1,5 +1,5 @@
 
-library(ggplot2)
+
 
 leaflitter <- read.csv("data/leaflitter.csv")
 head(leaflitter)
