@@ -52,9 +52,10 @@ chla <- ggplot(chla., aes(x=event, y=chla, color=season, na.rm = TRUE))+
   chla + ggsave("Chla.jpeg",  width = 12, height = 10, units = "cm")   
   
   chla.. <- na.omit(chla.)  
-  ggplot(chla.., aes(x=week, y=chla, color=season, fill=factor(Year))) +
+ c <- ggplot(chla.., aes(x=week, y=chla, color=season, fill=factor(Year))) +
     labs(y="Chlorophyll-a ("*"\u03BC"~g~m^-2*")", x = "Sampling event", 
          color = "Season", fill="Year") +
     geom_boxplot() +
     theme_classic()
   
+ c + ggsave("C.jpeg",  width = 12, height = 10, units = "cm")
