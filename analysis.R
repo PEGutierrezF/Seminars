@@ -31,6 +31,7 @@ leaf + ggsave("Leaf litter.jpeg",  width = 12, height = 10, units = "cm")
 chla. <- read.csv("data/chla.csv")
 head(chla.)
 
+
 chla <- ggplot(chla., aes(x=event, y=chla, color=season, na.rm = TRUE))+
   geom_line(size=1, na.rm = TRUE)+
   geom_point(aes(shape =  factor(pool)),size=2, na.rm = TRUE) +
@@ -48,4 +49,12 @@ chla <- ggplot(chla., aes(x=event, y=chla, color=season, na.rm = TRUE))+
   theme_classic() 
 
   chla
-  chla + ggsave("Chla.jpeg",  width = 12, height = 10, units = "cm")                     
+  chla + ggsave("Chla.jpeg",  width = 12, height = 10, units = "cm")   
+  
+  chla.. <- na.omit(chla.)  
+  ggplot(chla.., aes(x=week, y=chla, color=season, fill=factor(Year))) +
+    labs(y="Chlorophyll-a ("*"\u03BC"~g~m^-2*")", x = "Sampling event", 
+         color = "Season", fill="Year") +
+    geom_boxplot() +
+    theme_classic()
+  
