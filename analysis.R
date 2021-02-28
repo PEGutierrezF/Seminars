@@ -58,4 +58,4 @@ chla <- ggplot(chla., aes(x=event, y=chla, color=season, na.rm = TRUE))+
     geom_boxplot() +
     theme_classic()
   
- c + ggsave("C.jpeg",  width = 12, height = 10, units = "cm")
+ 
