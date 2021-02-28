@@ -25,13 +25,3 @@ ggplot(sh2, aes(x=observation , y=mean)) +
 
 
 
-d <- read.csv("data/discharge.csv")
-head(d)
-
-disc_Pool0 <- d %>%
-  group_by(day) %>%
-  summarize(daily_discharge = mean(discharge, na.rm = TRUE))
-  
-disc_Pool0
-
-write.csv(disc_Pool0, file = "disc_Pool0.csv")
