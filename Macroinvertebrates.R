@@ -11,9 +11,9 @@ MIv$date<-as.POSIXct(MIv$date,"%Y-%m-%d",tz = "UTC")
 
 MacroInv <- ggplot(MIv,aes(x=date,y=Abundance)) +
   xlab('Sampling event (2010-2020)')+ ylab("Density ("*ind. ~m^-2*")") +
-  geom_line() + geom_point(size = 1) +
+  geom_line(color= "#3690c0", size=1) + geom_point(color= "#034e7b", size = 3) +
  geom_errorbar(aes(ymax=Abundance+SE, ymin=Abundance-SE),na.rm=TRUE, position="dodge",
-               colour = "gray", linetype = 2) +
+               colour = "gray50", linetype = 2) +
   
   theme(axis.title.x = element_text(size = 14, angle = 0)) + # axis x
   theme(axis.title.y = element_text(size = 14, angle = 90)) + # axis y
