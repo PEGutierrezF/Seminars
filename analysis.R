@@ -11,9 +11,9 @@ leaflitter$Week<-as.POSIXct(leaflitter$Week,"%Y-%m-%d",tz = "UTC")
 
 leaf <- ggplot(leaflitter,aes(x=Week,y=Mean)) +
   xlab('Sampling event (2010-2020)')+ ylab("Mean litter input rate ("*g~m^-2~d^-1*")") +
-  geom_point(colour = "#1d5c06", size = 1) +
+  geom_point(colour = "#6e016b", size = 1.5) +
   geom_errorbar(aes(ymax=Mean+SD, ymin=Mean-SD),na.rm=TRUE, position="dodge",
-                colour = "#a7db3d") +
+                colour = "#6e016b") +
   
   theme(axis.title.x = element_text(size = 14, angle = 0)) + # axis x
   theme(axis.title.y = element_text(size = 14, angle = 90)) + # axis y
