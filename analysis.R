@@ -23,7 +23,7 @@ leaf <- ggplot(leaflitter,aes(x=Week,y=Mean)) +
   theme_classic() 
 
 leaf
-leaf + ggsave("Leaf litter.jpeg",  width = 12, height = 10, units = "cm")                     
+leaf + ggsave("Leaf litter.jpeg",  width = 14, height = 10, units = "cm")                     
                      
 
 
